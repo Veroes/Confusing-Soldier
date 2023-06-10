@@ -40,7 +40,7 @@ def main():
 	print("Daftar yang terpilih : ")
 	print("--- %s seconds ---" % (time.time() - start_time))
 	for i in range(len(pilih)):
-		print(pilih[i]['soldierName'], " ; ", pilih[i]['soldierCP'])
+		print(pilih[i]['soldierName'], ":", pilih[i]['soldierCP'])
 
 if __name__ == '__main__':
   main()

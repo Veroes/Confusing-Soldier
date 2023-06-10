@@ -51,7 +51,7 @@ def main():
 	print("Total : ",total)
 	print("--- %s seconds ---" % (time.time() - start_time))
 	for i in range(len(arrayOfHasil)):
-		print(arrayOfHasil[i]['soldierName'], " ", arrayOfHasil[i]['soldierCP'])
+		print(arrayOfHasil[i]['soldierName'], ":", arrayOfHasil[i]['soldierCP'])
 
 if __name__ == '__main__':
 	main()

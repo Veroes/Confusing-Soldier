@@ -81,7 +81,43 @@ const dpApproach = () => {
     }
   }
 };
+
 console.log(arrayOfSoldier);
+
+// UI Implementation
+const UI = (algorithmOutput) => {
+  const resultBox = document.getElementById("result-box");
+  arrayOfSoldier.forEach((soldier) => {
+    const soldierProfile = document.createElement("div");
+
+    soldierProfile.classList = "soldier-profile";
+
+    const image = document.createElement("img");
+    image.src = soldier.img;
+
+    const name = document.createElement("p");
+    name.textContent = soldier.name;
+
+    const power = document.createElement("p");
+    power.textContent = "Power: " + soldier.power;
+
+    if (soldier.status === true) {
+      soldierProfile.style.backgroundColor = "#539165";
+    }
+
+    soldierProfile.appendChild(image);
+    soldierProfile.appendChild(name);
+    soldierProfile.appendChild(power);
+    console.log(algorithmOutput);
+    if (algorithmOutput.greedy === true && soldier.order > 0) {
+      const order = document.createElement("p");
+      order.textContent = soldier.order;
+      soldierProfile.appendChild(order);
+    }
+    resultBox.appendChild(soldierProfile);
+  });
+};
+
 if (troopsData[0].greedy === true) {
   labelApproach.innerHTML = "Greedy Approach";
   greedyApproach();
@@ -89,3 +125,6 @@ if (troopsData[0].greedy === true) {
   labelApproach.innerHTML = "Dynamic Programming Approach";
   dpApproach();
 }
+
+// UI Output
+UI(troopsData[0]);

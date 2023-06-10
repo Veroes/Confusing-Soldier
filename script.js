@@ -4,6 +4,7 @@ const troopsData = {
     dp: false,
   },
 };
+
 const urlParams = new URLSearchParams(window.location.search);
 let inTroopsCount = urlParams.get("inTroopsCount");
 

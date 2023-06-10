@@ -29,6 +29,10 @@ img {
   height: 50px;
 }
 
+p {
+  color: #ffecec;
+}
+
 #choices-form {
   text-align: start;
   display: flex;
@@ -39,6 +43,17 @@ img {
 #vertical-line {
   border-left: 2px solid black;
   height: auto;
+}
+
+#result-box {
+  display: flex;
+  overflow: auto;
+  flex-direction: row;
+}
+
+.soldier-profile {
+  background-color: #cd1818;
+  padding: 0 5px;
 }
 
 .main-container {
@@ -57,8 +72,6 @@ img {
 .problem-description {
   width: 75%;
   margin: auto;
-  text-align: justify;
-  text-justify: inter-word;
 }
 
 .input-form {
@@ -116,4 +129,16 @@ img {
   box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
     rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
     rgba(50, 151, 211, 0.3) 0 0 0 4px;
+}
+
+.green-box {
+  width: 25px;
+  height: 25px;
+  background-color: #539165;
+}
+
+.red-box {
+  width: 25px;
+  height: 25px;
+  background-color: #cd1818;
 }
