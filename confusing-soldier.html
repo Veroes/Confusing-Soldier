@@ -27,24 +27,24 @@
       </h5>
       <form
         action="confusing-choices.html"
-        method="post"
+        method="get"
         class="input-form"
         id="formCount"
       >
         <div class="inputs">
           <label for="inTroopsCount">Input Number of Troops</label>
           <input
-            type="text"
+            type="number"
             name="inTroopsCount"
             id="inTroopsCount"
             placeholder="ex: 10"
+            min="3"
             required
           />
         </div>
-        <input class="button-style" type="submit" value="Proceed" />
+        <button class="button-style" type="submit">Proceed</button>
       </form>
       <h2>Made by ArDezTha</h2>
     </main>
-    <script src="./script.js"></script>
   </body>
 </html>

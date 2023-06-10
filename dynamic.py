@@ -18,7 +18,9 @@ def pilihan(F,arrayOfSoldier):
 
     x=len(F)-1
     while x>=0:
+        
         if F[x]>F[x-1]:
+            print(F[x], F[x-1])
             pilih.append({'soldierName' : arrayOfSoldier[x]['soldierName'], 'soldierCP' : arrayOfSoldier[x]['soldierCP']})
             x-=2
         else:

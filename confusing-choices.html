@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="./script.js" type="module"></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +20,30 @@
     <title>Confusing Soldier Problem</title>
   </head>
   <body>
-    <input type="button" value="test" onclick="showCount()" />
-    <script src="./script.js"></script>
+    <div class="main-container">
+      <main id="choices-form">
+        <div>
+          <h4>Add individual name and combat power</h4>
+          <div>
+            <div id="troopsLeft"></div>
+          </div>
+          <label for="sname">Name :</label>
+          <br />
+          <input type="text" name="sname" id="sname" required />
+          <br />
+          <label for="cpower">Combat Power :</label>
+          <br />
+          <input type="number" name="cpower" id="cpower" required />
+          <br />
+          <button class="button-style" id="btnTroop">Add</button>
+        </div>
+        <div id="vertical-line"></div>
+        <div>
+          <h4>Soldier Lists</h4>
+          <ul id="listContainer"></ul>
+        </div>
+      </main>
+      <div id="algorithm-path"></div>
+    </div>
   </body>
 </html>
