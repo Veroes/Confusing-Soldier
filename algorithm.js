@@ -19,27 +19,25 @@ const checkArray = (arrayOfSoldier) => {
 };
 
 const checkMaxIndex = (arrayOfSoldier) => {
-  let arrayPower = new Array();
+  let arrayPower = [];
   for (let i = 0; i < arrayOfSoldier.length; i++) {
     if (arrayOfSoldier[i].status === false && arrayOfSoldier[i].order === 0) {
       arrayPower.push([i, arrayOfSoldier[i].power]);
     }
   }
-  let maxIndex = -1;
-  let maxValue = -Infinity;
-
+  let maxIndex = 0;
+  let maxValue = 0;
   for (let i = 0; i < arrayPower.length; i++) {
     const currentValue = arrayPower[i][1];
     if (currentValue > maxValue) {
       maxValue = currentValue;
-      maxIndex = i;
+      maxIndex = arrayPower[i][0];
     }
   }
   return maxIndex;
 };
 
 const terminatePick = (arrayOfSoldier, maxIndex) => {
-  console.log(maxIndex);
   if (maxIndex === 0) {
     arrayOfSoldier[maxIndex + 1].order--;
   } else if (maxIndex === arrayOfSoldier.length - 1) {
@@ -63,13 +61,16 @@ const greedyApproach = () => {
 
 const dpApproach = () => {
   // Coin Row
-  let F = new Array();
+  let F = [];
   F.push(arrayOfSoldier[0].power);
-  F.push(arrayOfSoldier[1].power);
+  if (arrayOfSoldier[1].power > arrayOfSoldier[0].power) {
+    F.push(arrayOfSoldier[1].power);
+  } else {
+    F.push(arrayOfSoldier[0].power);
+  }
   for (let i = 2; i < arrayOfSoldier.length; i++) {
     F.push(Math.max(F[i - 1], F[i - 2] + arrayOfSoldier[i].power));
   }
-
   // Chosen
   let X = F.length - 1;
   while (X >= 0) {
@@ -108,7 +109,6 @@ const UI = (algorithmOutput) => {
     soldierProfile.appendChild(image);
     soldierProfile.appendChild(name);
     soldierProfile.appendChild(power);
-    console.log(algorithmOutput);
     if (algorithmOutput.greedy === true && soldier.order > 0) {
       const order = document.createElement("p");
       order.textContent = soldier.order;
